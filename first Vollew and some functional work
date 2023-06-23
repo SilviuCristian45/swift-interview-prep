@@ -1,0 +1,21 @@
+import Foundation
+
+func firsVowell(_ string: String) -> Int {
+    for i in 0 ..< string.count {
+        if "aeiou".contains("\(Array(string)[i])") {
+            return i
+        }
+    }    
+    return -1
+}
+
+func Factory(_ a: Int) -> (Int) -> Int {
+    var result: (Int) -> Int = { $0 + a}
+    return result
+}
+
+print(firsVowell("ana"))
+
+let p = Factory(4)
+print(p(2))
+print(p(12))
